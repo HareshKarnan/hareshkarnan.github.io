@@ -1,0 +1,5 @@
+Haresh Karnan is a PhD student at The University of Texas at Austin where he works on
+Reinforcement Learning, AI and Machine Learning for Robotics. He received his MS in Aerospace
+Engineering from Texas A&M University in College Station, Texas in 2018, where he was advised
+by Robert Skelton, and he received a Bachelors in Technology in Instrumentation and Control
+Engineering from National Institute of Technology, Tiruchirappalli in 2016.
