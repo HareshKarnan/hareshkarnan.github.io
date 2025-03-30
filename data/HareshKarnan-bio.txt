@@ -1,5 +1,1 @@
-Haresh Karnan is a PhD candidate at The University of Texas at Austin where he works on
-Reinforcement Learning, AI and Machine Learning for Robotics with Dr.Peter Stone. He received
-his MS in Aerospace Engineering from Texas A&M University in College Station, Texas in 2018, 
-where he was advised by Dr.Robert Skelton, and he received a Bachelors in Technology in 
-Instrumentation and Control Engineering from National Institute of Technology, Tiruchirappalli in 2016.
+Haresh Karnan is a Machine Learning Researcher at Zoox, building foundation models for autonomy. He focuses on large-scale training and validation of multimodal architectures that integrate perception, prediction, and planning to improve behavior understanding, response in complex scenarios, and validation for safer, more capable autonomous systems. He received his PhD from The University of Texas at Austin where he specialized in Reinforcement Learning, Self-Supervised Learning and Artificial Intelligence for Robotics with Dr. Peter Stone. He received his MS in Aerospace Engineering from Texas A&M University in College Station, Texas in 2018, where he was advised by Dr. Robert Skelton, and he received a Bachelors in Technology in Instrumentation and Control Engineering from National Institute of Technology, Tiruchirappalli in 2016.
