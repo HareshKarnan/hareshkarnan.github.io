@@ -8,6 +8,38 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/ut_seal.png">
+  <style>
+    .profile-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%; /* Creates a square container */
+      overflow: hidden;
+      border-radius: 50%; /* Makes the container circular */
+    }
+    
+    .profile-img, .profile-img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the circular container */
+      transition: opacity 0.3s ease;
+      border-radius: 50%; /* Makes the images circular */
+    }
+    
+    .profile-img-hover {
+      opacity: 0;
+    }
+    
+    .profile-container:hover .profile-img {
+      opacity: 0;
+    }
+    
+    .profile-container:hover .profile-img-hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,7 +80,12 @@
 
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/haresh_new.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/haresh_new_circle.png" class="hoverZoomLink"></a>
+              <a href="images/haresh_new.jpg">
+                <div class="profile-container">
+                  <img alt="profile photo" src="images/haresh_new_circle.png" class="profile-img">
+                  <img alt="ghibli profile photo" src="images/haresh_ghibli.png" class="profile-img-hover">
+                </div>
+              </a>
             </td>
           </tr>
         </tbody></table>
