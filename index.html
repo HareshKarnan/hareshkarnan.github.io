@@ -1,10 +1,37 @@
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Haresh Karnan</title>
+  <title>Haresh Karnan - Machine Learning Researcher at Zoox</title>
 
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Haresh Karnan - Machine Learning Researcher at Zoox">
+  <meta name="description" content="Machine Learning Researcher at Zoox, specializing in foundation models for autonomy, large-scale training, and validation of multimodal architectures for autonomous systems.">
+  <meta name="keywords" content="Haresh Karnan, Machine Learning, AI, Robotics, Autonomous Systems, Zoox, UT Austin, PhD, Research">
   <meta name="author" content="Haresh Karnan">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hareshkarnan.github.io/">
+  <meta property="og:title" content="Haresh Karnan - Machine Learning Researcher at Zoox">
+  <meta property="og:description" content="Machine Learning Researcher at Zoox, specializing in foundation models for autonomy, large-scale training, and validation of multimodal architectures for autonomous systems.">
+  <meta property="og:image" content="https://hareshkarnan.github.io/images/haresh_new.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hareshkarnan.github.io/">
+  <meta property="twitter:title" content="Haresh Karnan - Machine Learning Researcher at Zoox">
+  <meta property="twitter:description" content="Machine Learning Researcher at Zoox, specializing in foundation models for autonomy, large-scale training, and validation of multimodal architectures for autonomous systems.">
+  <meta property="twitter:image" content="https://hareshkarnan.github.io/images/haresh_new.jpg">
+
+  <!-- Additional Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="generator" content="HTML5">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://hareshkarnan.github.io/">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,6 +225,29 @@
       background-color: var(--link-color);
       opacity: 0.9;
     }
+
+    .animate-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Add animation delay for each section */
+    .animate-section:nth-child(1) { transition-delay: 0.1s; }
+    .animate-section:nth-child(2) { transition-delay: 0.2s; }
+    .animate-section:nth-child(3) { transition-delay: 0.3s; }
+    .animate-section:nth-child(4) { transition-delay: 0.4s; }
+    .animate-section:nth-child(5) { transition-delay: 0.5s; }
+
+    /* Smooth transition for all elements */
+    * {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
   </style>
 </head>
 
@@ -250,6 +300,36 @@
         top: 0,
         behavior: 'smooth'
       });
+    }
+
+    // Section animation code
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Add animation class to sections
+    document.querySelectorAll('table').forEach((section, index) => {
+      if (section.querySelector('heading')) {
+        section.classList.add('animate-section');
+        observer.observe(section);
+      }
+    });
+
+    // Animate profile section
+    const profileSection = document.querySelector('table:first-of-type');
+    if (profileSection) {
+      profileSection.classList.add('animate-section');
+      observer.observe(profileSection);
     }
   </script>
 
