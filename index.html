@@ -43,7 +43,7 @@
     :root {
       --bg-color: #ffffff;
       --text-color: #000000;
-      --link-color: #60981e;
+      --link-color: #2196F3;
       --heading-color: #000000;
       --table-bg: #ffffff;
       --table-border: #dddddd;
@@ -150,13 +150,15 @@
       content: '🌙';
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      right: 8px;
+      transform: translateY(-50%);
       font-size: 14px;
     }
 
     input:checked + .slider:after {
       content: '☀️';
+      right: auto;
+      left: 8px;
     }
 
     .profile-container {
