@@ -317,7 +317,7 @@
     }
 
     [data-theme="dark"] .profile-container {
-      background: #2d2d2d;
+      background: #111;
     }
     
     .tile-grid {
@@ -327,6 +327,7 @@
       width: 100%;
       height: 100%;
       display: grid;
+      z-index: 2;
       /* Grid size controlled by JS */
       grid-template-columns: repeat(var(--grid-size, 8), 1fr);
       grid-template-rows: repeat(var(--grid-size, 8), 1fr);
@@ -335,10 +336,13 @@
     
     .tile {
       position: relative;
-      width: 100.5%; /* Slight overlap to prevent gaps */
-      height: 100.5%;
+      width: 101%; /* Increased overlap to prevent gaps */
+      height: 101%;
       transform-style: preserve-3d;
       transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      /* Force hardware acceleration and better anti-aliasing */
+      outline: 1px solid transparent;
+      backface-visibility: hidden;
     }
     
     .profile-container:hover .tile {
@@ -354,6 +358,8 @@
       backface-visibility: hidden;
       background-size: var(--container-width) var(--container-height);
       background-repeat: no-repeat;
+      /* Prevent white edges during flip */
+      outline: 1px solid transparent;
     }
     
     .face-front {
@@ -366,7 +372,7 @@
       transform: rotateY(180deg);
     }
 
-    /* Fallback for no-js or loading */
+    /* Fallback Image stays underneath to fill gaps */
     .profile-img-fallback {
       position: absolute;
       top: 0;
@@ -374,11 +380,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
-
-    .profile-container.js-enabled .profile-img-fallback {
-      display: none;
+      z-index: 1;
     }
 
     html {
