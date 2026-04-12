@@ -594,11 +594,8 @@
                 const tile = document.createElement('div');
                 tile.className = 'tile';
                 
-                // Radial delay: Flip starts from the center and moves outwards
-                const centerX = (gridSize - 1) / 2;
-                const centerY = (gridSize - 1) / 2;
-                const dist = Math.sqrt(Math.pow(row - centerY, 2) + Math.pow(col - centerX, 2));
-                const delay = dist * 0.08; 
+                // Diagonal delay: Flip starts from top-left and moves to bottom-right
+                const delay = (row + col) * 0.05; 
                 tile.style.transitionDelay = `${delay}s`;
 
                 const front = document.createElement('div');
