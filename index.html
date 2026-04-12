@@ -63,51 +63,173 @@
       color: var(--text-color);
       transition: background-color 0.18s ease, color 0.12s ease;
       font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      font-size: 15px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin-bottom: 1.2em;
     }
 
     name {
       font-family: 'Figtree', sans-serif;
       font-weight: 700;
-      font-size: 2em;
+      font-size: 2.2em;
+      display: block;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      text-align: center;
     }
 
     heading {
       font-family: 'Figtree', sans-serif;
       font-weight: 600;
-      font-size: 1.3em;
+      font-size: 1.35em;
+      letter-spacing: -0.2px;
+      display: block;
+      text-align: left;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
 
     papertitle {
       font-family: 'Figtree', sans-serif;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 1.05em;
+      display: inline-block;
+      margin-bottom: 4px;
     }
 
-    a {
-      color: var(--link-color);
+    .publication-img {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    [data-theme="dark"] .publication-img {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .publication-row td {
+      padding-top: 25px !important;
+      padding-bottom: 25px !important;
+      border-bottom: 1px solid var(--table-border);
+      vertical-align: middle;
+    }
+
+    .publication-row td:first-child {
+      width: 30%;
+      padding-right: 30px !important;
+      text-align: center;
+    }
+
+    .publication-row td:last-child {
+      width: 70%;
+    }
+
+    .publication-row:last-child td {
+      border-bottom: none;
     }
 
     table {
       background-color: var(--table-bg);
+      border-collapse: collapse;
+      margin: 0 auto;
     }
 
     td {
       border-color: var(--table-border);
     }
 
+    .publication-row {
+      transition: background-color 0.3s ease;
+    }
+
+    /* Center the main container table more cleanly */
+    table[style*="max-width:800px"] {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    table[style*="max-width:800px"] > tbody {
+      width: 100%;
+    }
+
+    table[style*="max-width:800px"] > tbody > tr > td {
+      width: 100%;
+    }
+
+    .publication-row:hover {
+      background-color: rgba(66, 133, 244, 0.07);
+    }
+
+    [data-theme="dark"] .publication-row:hover {
+      background-color: rgba(138, 180, 248, 0.07);
+    }
+
+    .publication-row:hover .publication-img {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15), 0 0 20px rgba(66, 133, 244, 0.4);
+      border-color: var(--link-color);
+    }
+
+    [data-theme="dark"] .publication-row:hover .publication-img {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.5), 0 0 20px rgba(138, 180, 248, 0.4);
+    }
+
+    a {
+      color: var(--link-color);
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    a:hover {
+      color: #f09228;
+    }
+
+    /* Modern Theme Switcher */
     .theme-switch-wrapper {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 25px;
+      right: 25px;
       z-index: 1000;
     }
 
     .theme-switch {
       display: inline-block;
-      height: 34px;
+      height: 30px;
       position: relative;
-      width: 60px;
+      width: 54px;
     }
 
     .theme-switch input {
@@ -115,7 +237,7 @@
     }
 
     .slider {
-      background-color: #ccc;
+      background-color: #e2e8f0;
       bottom: 0;
       cursor: pointer;
       left: 0;
@@ -124,41 +246,56 @@
       top: 0;
       transition: .4s;
       border-radius: 34px;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .slider:before {
       background-color: #fff;
-      bottom: 4px;
+      bottom: 3px;
       content: "";
-      height: 26px;
-      left: 4px;
+      height: 22px;
+      left: 3px;
       position: absolute;
       transition: .4s;
-      width: 26px;
+      width: 22px;
       border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 2;
     }
 
-    input:checked + .slider {
-      background-color: #60981e;
+    [data-theme="dark"] .slider {
+      background-color: #2d3748;
     }
 
     input:checked + .slider:before {
-      transform: translateX(26px);
+      transform: translateX(24px);
     }
 
-    .slider:after {
-      content: '🌙';
+    .slider .icon {
       position: absolute;
       top: 50%;
-      right: 8px;
       transform: translateY(-50%);
       font-size: 14px;
+      transition: 0.3s;
+      z-index: 1;
     }
 
-    input:checked + .slider:after {
-      content: '☀️';
-      right: auto;
-      left: 8px;
+    .slider .sun {
+      left: 7px;
+      opacity: 1;
+    }
+
+    .slider .moon {
+      right: 7px;
+      opacity: 1;
+    }
+
+    [data-theme="dark"] .slider .sun {
+      opacity: 0.3;
+    }
+
+    [data-theme="light"] .slider .moon {
+      opacity: 0.3;
     }
 
     .profile-container {
@@ -257,7 +394,10 @@
   <div class="theme-switch-wrapper">
     <label class="theme-switch" for="checkbox">
       <input type="checkbox" id="checkbox" />
-      <div class="slider"></div>
+      <div class="slider">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+      </div>
     </label>
   </div>
 
@@ -393,21 +533,20 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
               <a href="misc/grpo_visualizer.html">
-                <img src="images/grpo.png" alt="GRPO Advantage Visualizer" width="160" height="120" style="border-style: none">
+                <img src="images/grpo.png" alt="GRPO Advantage Visualizer" width="160" height="120" class="publication-img" style="border-style: none">
               </a>
             </td>
             <td width="75%" valign="middle">
               <a href="misc/grpo_visualizer.html" id="grpo-visualizer">
                 <papertitle>GRPO Advantage Visualizer</papertitle>
-              </a>
-              <br>
-              <em>Interactive tool (vibe-coded with GPT5!)</em>
-              <br>
-              <a href="misc/grpo_visualizer.html">Open tool</a>
-              <p>Interactively explore per-completion advantages used in GRPO. Adjust rewards and compare Z-score vs mean-centered variants with live plots.</p>
+                </a>
+                <br>
+                <br>
+                <a href="misc/grpo_visualizer.html">Open tool</a>
+                <p>Interactively explore per-completion advantages used in GRPO. Drag bars to adjust rewards or target specific advantages with live Z-score mapping.</p>
             </td>
           </tr>
         
@@ -423,9 +562,9 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
           <!-- PhD Thesis -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/dissertation.png" alt="PhD Thesis" width="160" height="120" style="border-style: none">
+              <img src="images/dissertation.png" alt="PhD Thesis" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://repositories.lib.utexas.edu/items/f9dec981-19a0-4e4c-9cac-7f63c7a68ad3" id="phd-thesis">
@@ -442,9 +581,9 @@
           </tr>
 
           <!-- PATERN -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/patern_night.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/patern_night.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.09912">
@@ -461,9 +600,9 @@
           </tr>
 
           <!-- Social Case Study -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/social_case_study.png" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/social_case_study.png" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.13466">
@@ -481,9 +620,9 @@
 
           
           <!-- STERLING -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/sterling.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/sterling.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.15302">
@@ -500,9 +639,9 @@
           </tr>
 
           <!--          SCAND -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/scand.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/scand.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2203.15041">
@@ -518,9 +657,9 @@
           </tr>
 
           <!--          VI-IKD -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/drive_fast.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/drive_fast.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2203.15983">
@@ -537,9 +676,9 @@
         </tr>
 
         <!--          Optim-FKD -->
-        <tr>
+        <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/truck_drift.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/truck_drift.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2206.08487">
@@ -555,9 +694,9 @@
         </tr>
 
         <!--          BARN Challenge -->
-        <tr>
+        <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/barn_at_icra.jpg" alt="Publication summary image" width="160" height="120" style="border-style: none">
+            <img src="images/barn_at_icra.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2208.10473">
@@ -573,9 +712,9 @@
         </tr>
 
 <!--          VOILA -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2105.09371">
@@ -592,9 +731,9 @@
           </tr>
 
 <!--          VGAIfO-SO -->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/vgaifo-so.png" alt="Publication summary image" width="150" height="120" style="border-style: none">
+              <img src="images/vgaifo-so.png" alt="Publication summary image" width="150" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2202.00243">
@@ -611,9 +750,9 @@
           </tr>
 
 <!--          Grounded Sim-to-real article-->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/gsim2real.png" alt="Publication summary image" width="135" height="145" style="border-style: none">
+              <img src="images/gsim2real.png" alt="Publication summary image" width="135" height="145" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://link.springer.com/article/10.1007/s10994-021-05982-z">
@@ -630,9 +769,9 @@
           </tr>
 
 <!--          GARAT-->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/minitaur.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/minitaur.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/NEURIPS20-Karnan.pdf">
@@ -649,9 +788,9 @@
           </tr>
 
 <!--          SGAT-->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/sgat.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/sgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/IROS20-Desai.pdf">
@@ -668,9 +807,9 @@
           </tr>
 
 <!--          RGAT-->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/rgat.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/rgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/IROS20-Karnan.pdf">
@@ -687,9 +826,9 @@
           </tr>
 
 <!--          Tensegrity IROS 2017-->
-          <tr>
+          <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/iros2017.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+              <img src="images/iros2017.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://ieeexplore.ieee.org/document/8206022">
@@ -719,9 +858,9 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
         <!-- IPPC Workshop poster -->
-        <tr>
+        <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/ippc_poster.PNG" alt="Publication summary image" width="160" height="120" style="border-style: none">
+            <img src="images/ippc_poster.PNG" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://ippc-iros23.github.io/papers/karnan.pdf">
@@ -738,9 +877,9 @@
         </tr>
         
         <!-- Principles and Guidelines for Evaluating Social Robot Navigation Algorithms -->
-        <tr>
+        <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/socnav.jpg" alt="Publication summary image" width="160" height="120" style="border-style: none">
+            <img src="images/socnav.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2306.16740">
@@ -757,9 +896,9 @@
         </tr>
 
       <!--  Social Nav Benchmark-->
-      <tr>
+      <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/socialnavdallle.png" alt="Publication summary image" width="160" height="120" style="border-style: none">
+          <img src="images/socialnavdallle.png" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://drive.google.com/file/d/1WwlIEIW0fTpxy8il8Mn87KIaAXloibs1/view">
@@ -775,9 +914,9 @@
       </tr>
 
       <!--  VOILA-->
-        <tr>
+        <tr class="publication-row">
           <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+            <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2105.09371">
@@ -793,9 +932,9 @@
         </tr>
 
       <!--  take out the trash-->
-        <tr>
+        <tr class="publication-row">
           <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/taketrash.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+            <img src="images/taketrash.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/pdf/1909.06529.pdf">
@@ -811,9 +950,9 @@
         </tr>
 
     <!--          GARAT - RSS-->
-      <tr>
+      <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/garat.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+          <img src="images/garat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://sim2real.github.io/assets/papers/2020/desai.pdf">
@@ -831,13 +970,13 @@
 
 
     <!--          USV tracking-->
-      <tr>
+      <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/trackusv.gif" alt="Publication summary image" width="160" height="120" style="border-style: none">
+          <img src="images/trackusv.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://arxiv.org/pdf/1710.02932.pdf">
-            <papertitle>Visual Servoing of Unmanned Surface Vehicle from Small Tethered Unmanned Aerial Vehicle</papertitle>
+            <papertitle>Visual Servoing of Unmanned Surface Vehicle from Small Tethered UnmAerial Vehicle</papertitle>
           </a>
           <br>
           <strong>Haresh Karnan</strong>, Aritra Biswas, Pranav Vaidik Dhulipala, Jan Dufek, Robin Murphy
@@ -860,9 +999,9 @@
   </tbody></table>
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    <tr>
+    <tr class="publication-row">
       <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/patent.jpeg" alt="Publication summary image" width="160" height="120" style="border-style: none">
+        <img src="images/patent.jpeg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
       </td>
       <td width="75%" valign="middle">
         <a href="https://patents.google.com/patent/US11579622B2/en">
