@@ -586,7 +586,7 @@
           const initTileGrid = () => {
             const container = document.getElementById('profileContainer');
             const grid = document.getElementById('tileGrid');
-            const gridSize = 8; // Change this for more/fewer boxes
+            const gridSize = 14; // Increased for a finer shimmer effect
             const width = container.offsetWidth;
             const height = container.offsetHeight;
 
@@ -600,7 +600,8 @@
                 tile.className = 'tile';
                 
                 // Diagonal delay: Flip starts from top-left and moves to bottom-right
-                const delay = (row + col) * 0.05; 
+                // Slightly reduced multiplier (0.035) to keep the total animation time reasonable
+                const delay = (row + col) * 0.035; 
                 tile.style.transitionDelay = `${delay}s`;
 
                 const front = document.createElement('div');
