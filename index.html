@@ -308,32 +308,77 @@
     .profile-container {
       position: relative;
       width: 100%;
-      padding-bottom: 100%; /* Creates a square container */
+      padding-bottom: 100%;
+      border-radius: 50%;
       overflow: hidden;
-      border-radius: 50%; /* Makes the container circular */
+      perspective: 1200px;
+      cursor: pointer;
+      background: #f8f9fa;
+    }
+
+    [data-theme="dark"] .profile-container {
+      background: #2d2d2d;
     }
     
-    .profile-img, .profile-img-hover {
+    .tile-grid {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the image fills the circular container */
+      display: grid;
+      /* Grid size controlled by JS */
+      grid-template-columns: repeat(var(--grid-size, 8), 1fr);
+      grid-template-rows: repeat(var(--grid-size, 8), 1fr);
+      pointer-events: none;
+    }
+    
+    .tile {
+      position: relative;
+      width: 100.5%; /* Slight overlap to prevent gaps */
+      height: 100.5%;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .profile-container:hover .tile {
+      transform: rotateY(180deg);
+    }
+    
+    .tile-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-size: var(--container-width) var(--container-height);
+      background-repeat: no-repeat;
+    }
+    
+    .face-front {
+      background-image: url('images/haresh_new_circle.png');
+      z-index: 2;
+    }
+    
+    .face-back {
+      background-image: url('images/haresh_ghibli.png');
+      transform: rotateY(180deg);
+    }
+
+    /* Fallback for no-js or loading */
+    .profile-img-fallback {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: opacity 0.3s ease;
-      border-radius: 50%; /* Makes the images circular */
     }
-    
-    .profile-img-hover {
-      opacity: 0;
-    }
-    
-    .profile-container:hover .profile-img {
-      opacity: 0;
-    }
-    
-    .profile-container:hover .profile-img-hover {
-      opacity: 1;
+
+    .profile-container.js-enabled .profile-img-fallback {
+      display: none;
     }
 
     html {
@@ -519,14 +564,64 @@
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
               <a href="images/haresh_new.jpg" class="profile-container-link">
-                <div class="profile-container">
-                  <img alt="profile photo" src="images/haresh_new_circle.png" class="profile-img">
-                  <img alt="ghibli profile photo" src="images/haresh_ghibli.png" class="profile-img-hover">
+                <div class="profile-container" id="profileContainer">
+                  <!-- Fallback Image -->
+                  <img alt="profile photo" src="images/haresh_new_circle.png" class="profile-img-fallback">
+                  <div class="tile-grid" id="tileGrid"></div>
                 </div>
               </a>
             </td>
           </tr>
         </tbody></table>
+
+        <script>
+          /**
+           * Profile Tile Flip Initialization
+           */
+          const initTileGrid = () => {
+            const container = document.getElementById('profileContainer');
+            const grid = document.getElementById('tileGrid');
+            const gridSize = 8; // Change this for more/fewer boxes
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+
+            container.style.setProperty('--grid-size', gridSize);
+            container.style.setProperty('--container-width', `${width}px`);
+            container.style.setProperty('--container-height', `${height}px`);
+
+            for (let row = 0; row < gridSize; row++) {
+              for (let col = 0; col < gridSize; col++) {
+                const tile = document.createElement('div');
+                tile.className = 'tile';
+                
+                // Add staggered delay based on sum of row and col (wave effect)
+                // Or try row + col for diagonal, or Math.sqrt(row^2 + col^2) for radial
+                const delay = (row + col) * 0.04; 
+                tile.style.transitionDelay = `${delay}s`;
+
+                const front = document.createElement('div');
+                front.className = 'tile-face face-front';
+                front.style.backgroundPosition = `-${col * (width / gridSize)}px -${row * (height / gridSize)}px`;
+
+                const back = document.createElement('div');
+                back.className = 'tile-face face-back';
+                back.style.backgroundPosition = `-${col * (width / gridSize)}px -${row * (height / gridSize)}px`;
+
+                tile.appendChild(front);
+                tile.appendChild(back);
+                grid.appendChild(tile);
+              }
+            }
+            container.classList.add('js-enabled');
+          };
+
+          // Run initialization
+          if (document.readyState === 'complete') {
+            initTileGrid();
+          } else {
+            window.addEventListener('load', initTileGrid);
+          }
+        </script>
 
         
         
