@@ -104,8 +104,7 @@
       font-family: 'Figtree', sans-serif;
       font-weight: 600;
       font-size: 1.05em;
-      display: inline-block;
-      margin-bottom: 2px;
+      display: inline;
     }
 
     .publication-img {
@@ -198,33 +197,22 @@
       color: var(--link-color);
       font-weight: 500;
       text-decoration: none;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -1px;
-      left: 0;
-      background-color: currentColor;
-      transition: width 0.3s ease;
-    }
-
-    /* Disable underline effect for image links */
-    a:hover::after {
-      width: 100%;
-    }
-
-    .profile-container-link:hover::after,
-    a:has(img):hover::after {
-      width: 0 !important;
+      transition: color 0.3s ease, background-size 0.3s ease;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
     }
 
     a:hover {
       color: #f09228;
+      background-size: 100% 1px;
+    }
+
+    /* Disable underline effect for image links */
+    .profile-container-link,
+    a:has(img) {
+      background-image: none !important;
     }
 
     /* Modern Theme Switcher */
