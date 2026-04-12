@@ -209,8 +209,15 @@
       transition: width 0.3s ease;
     }
 
+    /* Disable underline effect for image links */
     a:hover::after {
       width: 100%;
+    }
+
+    .publication-row a:hover::after,
+    .profile-container-link:hover::after,
+    a:has(img):hover::after {
+      width: 0 !important;
     }
 
     a:hover {
@@ -511,7 +518,7 @@
 
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/haresh_new.jpg">
+              <a href="images/haresh_new.jpg" class="profile-container-link">
                 <div class="profile-container">
                   <img alt="profile photo" src="images/haresh_new_circle.png" class="profile-img">
                   <img alt="ghibli profile photo" src="images/haresh_ghibli.png" class="profile-img-hover">
