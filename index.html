@@ -29,6 +29,8 @@
   <meta name="language" content="English">
   <meta name="revisit-after" content="7 days">
   <meta name="generator" content="HTML5">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a2e" media="(prefers-color-scheme: dark)">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://hareshkarnan.github.io/">
@@ -39,6 +41,37 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/ut_seal.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Haresh Karnan",
+    "url": "https://hareshkarnan.github.io/",
+    "image": "https://hareshkarnan.github.io/images/haresh_new.jpg",
+    "jobTitle": "Machine Learning Researcher",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Amazon AGI"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "The University of Texas at Austin"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Texas A&M University"
+      }
+    ],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=VatfufAAAAAJ&hl=en",
+      "https://www.linkedin.com/in/hareshkarnan/"
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg-color: #ffffff;
@@ -540,9 +573,6 @@
                 Prior to my PhD, I worked with <a href="https://bobskelton.github.io/">Dr. Robert Skelton</a> at Texas A&M University, College Station, on state estimation and control of Tensegrity robots.
               </p>
 
-              <!-- <p align=center>
-                <font color=#60981e><em>I'm on the job market for research positions in industry, starting early 2024.<br>Please feel free to reach out if you would like to chat!</em></font>
-                </p> -->
 
               <p style="text-align:center">
                 <strong>
@@ -630,7 +660,7 @@
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
               <a href="misc/grpo_visualizer.html">
-                <img src="images/grpo.png" alt="GRPO Advantage Visualizer" width="160" height="120" class="publication-img" style="border-style: none">
+                <img src="images/grpo.png" alt="GRPO Advantage Visualizer" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
               </a>
             </td>
             <td width="75%" valign="middle">
@@ -658,7 +688,7 @@
           <!-- PhD Thesis -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/dissertation.png" alt="PhD Thesis" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/dissertation.png" alt="PhD Thesis" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://repositories.lib.utexas.edu/items/f9dec981-19a0-4e4c-9cac-7f63c7a68ad3" id="phd-thesis">
@@ -677,7 +707,7 @@
           <!-- PATERN -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/patern_night.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/patern_night.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.09912">
@@ -696,7 +726,7 @@
           <!-- Social Case Study -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/social_case_study.png" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/social_case_study.png" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.13466">
@@ -716,7 +746,7 @@
           <!-- STERLING -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/sterling.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/sterling.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2309.15302">
@@ -735,7 +765,7 @@
           <!--          SCAND -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/scand.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/scand.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2203.15041">
@@ -754,7 +784,7 @@
           <!--          VI-IKD -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/drive_fast.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/drive_fast.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2203.15983">
@@ -773,7 +803,7 @@
         <!--          Optim-FKD -->
         <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/truck_drift.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/truck_drift.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2206.08487">
@@ -792,7 +822,7 @@
         <!--          BARN Challenge -->
         <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/barn_at_icra.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+            <img src="images/barn_at_icra.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2208.10473">
@@ -811,7 +841,7 @@
 <!--          VOILA -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2105.09371">
@@ -830,7 +860,7 @@
 <!--          VGAIfO-SO -->
           <tr class="publication-row">
             <td style="padding:25px;width:25%;vertical-align:middle">
-              <img src="images/vgaifo-so.png" alt="Publication summary image" width="150" height="120" class="publication-img" style="border-style: none">
+              <img src="images/vgaifo-so.png" alt="Publication summary image" width="150" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://arxiv.org/abs/2202.00243">
@@ -849,7 +879,7 @@
 <!--          Grounded Sim-to-real article-->
           <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/gsim2real.png" alt="Publication summary image" width="135" height="145" class="publication-img" style="border-style: none">
+              <img src="images/gsim2real.png" alt="Publication summary image" width="135" height="145" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://link.springer.com/article/10.1007/s10994-021-05982-z">
@@ -868,7 +898,7 @@
 <!--          GARAT-->
           <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/minitaur.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/minitaur.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/NEURIPS20-Karnan.pdf">
@@ -887,7 +917,7 @@
 <!--          SGAT-->
           <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/sgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/sgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/IROS20-Desai.pdf">
@@ -906,7 +936,7 @@
 <!--          RGAT-->
           <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/rgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/rgat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/IROS20-Karnan.pdf">
@@ -925,7 +955,7 @@
 <!--          Tensegrity IROS 2017-->
           <tr class="publication-row">
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/iros2017.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+              <img src="images/iros2017.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
               <a href="https://ieeexplore.ieee.org/document/8206022">
@@ -957,7 +987,7 @@
         <!-- IPPC Workshop poster -->
         <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/ippc_poster.PNG" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+            <img src="images/ippc_poster.PNG" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://ippc-iros23.github.io/papers/karnan.pdf">
@@ -976,7 +1006,7 @@
         <!-- Principles and Guidelines for Evaluating Social Robot Navigation Algorithms -->
         <tr class="publication-row">
           <td style="padding:25px;width:25%;vertical-align:middle">
-            <img src="images/socnav.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+            <img src="images/socnav.jpg" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2306.16740">
@@ -995,7 +1025,7 @@
       <!--  Social Nav Benchmark-->
       <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/socialnavdallle.png" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+          <img src="images/socialnavdallle.png" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://drive.google.com/file/d/1WwlIEIW0fTpxy8il8Mn87KIaAXloibs1/view">
@@ -1013,7 +1043,7 @@
       <!--  VOILA-->
         <tr class="publication-row">
           <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+            <img src="images/voila_airsim.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/abs/2105.09371">
@@ -1031,7 +1061,7 @@
       <!--  take out the trash-->
         <tr class="publication-row">
           <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/taketrash.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+            <img src="images/taketrash.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
           </td>
           <td width="75%" valign="middle">
             <a href="https://arxiv.org/pdf/1909.06529.pdf">
@@ -1049,7 +1079,7 @@
     <!--          GARAT - RSS-->
       <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/garat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+          <img src="images/garat.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://sim2real.github.io/assets/papers/2020/desai.pdf">
@@ -1069,11 +1099,11 @@
     <!--          USV tracking-->
       <tr class="publication-row">
         <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="images/trackusv.gif" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+          <img src="images/trackusv.gif" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
         </td>
         <td width="75%" valign="middle">
           <a href="https://arxiv.org/pdf/1710.02932.pdf">
-            <papertitle>Visual Servoing of Unmanned Surface Vehicle from Small Tethered UnmAerial Vehicle</papertitle>
+            <papertitle>Visual Servoing of Unmanned Surface Vehicle from Small Tethered Unmanned Aerial Vehicle</papertitle>
           </a>
           <br>
           <strong>Haresh Karnan</strong>, Aritra Biswas, Pranav Vaidik Dhulipala, Jan Dufek, Robin Murphy
@@ -1098,7 +1128,7 @@
 
     <tr class="publication-row">
       <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/patent.jpeg" alt="Publication summary image" width="160" height="120" class="publication-img" style="border-style: none">
+        <img src="images/patent.jpeg" alt="Publication summary image" width="160" height="120" class="publication-img" loading="lazy" style="border-style: none">
       </td>
       <td width="75%" valign="middle">
         <a href="https://patents.google.com/patent/US11579622B2/en">
@@ -1113,31 +1143,6 @@
       </td>
     </tr>
 
-<!--        <table width="100%" align="center" border="0" cellpadding="20"><tbody>-->
-<!--          <tr>-->
-<!--            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>-->
-<!--            <td width="75%" valign="center">-->
-<!--              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td style="padding:20px;width:25%;vertical-align:middle">-->
-<!--              <img src="images/cs188.jpg" alt="cs188">-->
-<!--            </td>-->
-<!--            <td width="75%" valign="center">-->
-<!--              <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--        </tbody></table>-->
 
   
 
